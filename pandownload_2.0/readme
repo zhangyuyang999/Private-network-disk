@@ -1,0 +1,22 @@
+
+
+pandownload_2.0功能概述
+
+基本功能：
+	1. cd 进入对应目录//currently only support '..',directory and absolute path
+	2. ls 列出相应目录文件// including file name ,size and owner.
+	3. puts 将本地文件上传至服务器//currently only supports uploading narmal files not directory
+	4. gets 文件名 下载服务器文件到本地//currently only supports downloading normal files not directory
+	5. remove 删除服务器上文件//currently only supports deleting files not direntory
+	6. pwd 显示目前所在路径
+	7. 其他命令可以自己添加
+	8. 无效命令不响应
+其他功能：
+	1、密码验证
+		采用LINUX系统的账号体系进行验证
+
+	3.断点续传
+   	 	进行 gets hello.avi 时候，判断本地是否存在hello.avi，如果存在，stat获取hello.avi的大小，传递给服务器的是gets hello.avi
+
+	4.mmap将大文件映射入内存，进行网络传递
+    		1、当你发现文件大于100M，就使用 mmap 该文件，然后再传输
